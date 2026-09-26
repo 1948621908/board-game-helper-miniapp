@@ -1,0 +1,8 @@
+<view class="container profile-page">
+  <view class="profile-head"><view class="avatar">桌</view><view><view class="profile-title">我的桌游助手</view><view class="profile-subtitle">轻量、顺手，聚会随时开局</view></view></view>
+  <view class="menu card">
+    <view class="menu-row" bindtap="onFeedback"><view class="menu-icon">✎</view><view class="menu-label">意见反馈</view><view class="menu-arrow">›</view></view>
+    <view class="menu-row" bindtap="onAbout"><view class="menu-icon">i</view><view class="menu-label">关于桌游助手</view><view class="menu-arrow">›</view></view>
+  </view>
+  <view class="version">当前版本 {{version}}</view>
+</view>

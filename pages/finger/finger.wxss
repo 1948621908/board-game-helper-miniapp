@@ -1,0 +1,19 @@
+page { background: #f6f8fc; }
+.finger-page { min-height: 100vh; box-sizing: border-box; padding: 30rpx 32rpx 64rpx; }
+.finger-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 20rpx 4rpx 28rpx; }
+.eyebrow { color: #16a6a1; font-size: 20rpx; font-weight: 700; letter-spacing: 3rpx; }
+.title { margin-top: 12rpx; color: #172033; font-size: 50rpx; font-weight: 700; }
+.subtitle { max-width: 510rpx; margin-top: 10rpx; color: #8a94a6; font-size: 24rpx; line-height: 1.5; }
+.count-badge { margin-top: 24rpx; padding: 14rpx 20rpx; border-radius: 28rpx; background: #e3f8f6; color: #138d8a; font-size: 24rpx; white-space: nowrap; }
+.touch-stage { position: relative; height: 890rpx; overflow: hidden; border-radius: 34rpx; background: #e9f4f4; box-shadow: inset 0 0 0 2rpx rgba(22,166,161,.08), 0 12rpx 30rpx rgba(28,84,94,.06); }
+.touch-stage.is-locked { background: #edf0f7; }
+.stage-guide { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -55%); width: 100%; text-align: center; pointer-events: none; }
+.guide-icon { color: #70b9b5; font-size: 92rpx; }.guide-title { margin-top: 20rpx; color: #397c7b; font-size: 32rpx; font-weight: 700; }.guide-desc { margin-top: 12rpx; color: #77a6a6; font-size: 23rpx; }
+.finger { position: absolute; width: 132rpx; height: 132rpx; transform: translate(-50%, -50%); transition: opacity .25s, transform .25s; }
+.finger-ring { position: absolute; inset: 0; box-sizing: border-box; border: 5rpx solid #16a6a1; border-radius: 50%; background: rgba(255,255,255,.4); box-shadow: 0 0 0 12rpx rgba(22,166,161,.12), 0 10rpx 20rpx rgba(22,166,161,.18); animation: breathe 1.2s ease-in-out infinite; }
+.finger-label { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #138d8a; font-size: 34rpx; font-weight: 800; }
+.finger.dimmed { opacity: .18; transform: translate(-50%, -50%) scale(.82); }.finger.selected { z-index: 2; transform: translate(-50%, -50%) scale(1.16); }.finger.selected .finger-ring { border-color: #f08b42; background: #fff5e9; box-shadow: 0 0 0 16rpx rgba(240,139,66,.16), 0 12rpx 28rpx rgba(240,139,66,.25); animation: selectedPulse .8s ease-in-out infinite alternate; }.finger.selected .finger-label { color: #d66d23; }
+.stage-status { position: absolute; bottom: 28rpx; left: 50%; transform: translateX(-50%); padding: 14rpx 24rpx; border-radius: 40rpx; background: rgba(255,255,255,.78); color: #4b8584; font-size: 23rpx; white-space: nowrap; }.locked-status { color: #b56b31; }
+.result-area { padding-top: 28rpx; text-align: center; }.result-placeholder { color: #9aa4b5; font-size: 27rpx; }.result { color: #d66d23; font-size: 42rpx; font-weight: 800; }.reset-button { width: 280rpx; margin-top: 24rpx; border-radius: 18rpx; background: #2563eb; color: #fff; font-size: 27rpx; }.reset-button::after { border: 0; }
+@keyframes breathe { 0%,100% { transform: scale(.94); opacity: .72; } 50% { transform: scale(1); opacity: 1; } }
+@keyframes selectedPulse { from { transform: scale(.95); } to { transform: scale(1.05); } }

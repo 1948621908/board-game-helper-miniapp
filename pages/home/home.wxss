@@ -1,0 +1,27 @@
+.home-page { padding-top: 24rpx; padding-bottom: 48rpx; }
+.hero { display: flex; align-items: flex-start; justify-content: space-between; padding: 32rpx 8rpx 42rpx; }
+.eyebrow { color: #6b7a99; font-size: 20rpx; letter-spacing: 3rpx; font-weight: 700; }
+.title { margin-top: 18rpx; color: #172033; font-size: 52rpx; line-height: 1.18; font-weight: 700; }
+.subtitle { max-width: 520rpx; margin-top: 16rpx; color: #8a94a6; font-size: 25rpx; line-height: 1.5; }
+.hero-mark { width: 92rpx; height: 92rpx; display: flex; align-items: center; justify-content: center; background: #e8efff; border-radius: 28rpx; color: #2563eb; font-size: 46rpx; transform: rotate(12deg); }
+.section-head { display: flex; align-items: center; justify-content: space-between; margin: 0 4rpx 20rpx; }
+.section-title { font-size: 32rpx; font-weight: 700; }
+.section-caption { color: #a0a9b8; font-size: 23rpx; }
+.more { color: #6b7a99; font-size: 24rpx; }
+.more text { margin-left: 4rpx; font-size: 32rpx; vertical-align: -2rpx; }
+.tool-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20rpx; }
+.tool-card { position: relative; min-height: 232rpx; padding: 24rpx; box-sizing: border-box; }
+.tool-icon { width: 66rpx; height: 66rpx; display: flex; align-items: center; justify-content: center; border-radius: 20rpx; color: #fff; font-size: 24rpx; font-weight: 700; }
+.tool-icon.blue { background: #4d7cff; }.tool-icon.purple { background: #9a70ec; }.tool-icon.orange { background: #f39b4a; }.tool-icon.green { background: #39b58a; }
+.tool-icon.red { background: #ef5b64; font-size: 46rpx; }
+.tool-icon.teal { background: #16a6a1; font-size: 40rpx; }
+.tool-name { margin-top: 22rpx; font-size: 28rpx; font-weight: 700; }
+.tool-desc { margin-top: 10rpx; color: #8a94a6; font-size: 22rpx; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tool-tag { display: inline-block; margin-top: 18rpx; padding: 7rpx 12rpx; border-radius: 10rpx; background: #f3f6fb; color: #7a879d; font-size: 20rpx; }
+.tool-arrow { position: absolute; right: 24rpx; bottom: 22rpx; color: #bdc6d6; font-size: 32rpx; }
+.recent-head { margin-top: 48rpx; }
+.recent { overflow: hidden; padding: 0 24rpx; }
+.recent-row { display: flex; align-items: center; min-height: 106rpx; border-bottom: 1rpx solid #eef1f6; }.recent-row:last-child { border-bottom: 0; }
+.recent-dot { width: 14rpx; height: 14rpx; margin-right: 20rpx; border-radius: 50%; background: #4d7cff; }
+.recent-main { flex: 1; }.recent-name { font-size: 27rpx; }.recent-time { margin-top: 8rpx; color: #9aa4b5; font-size: 22rpx; }.recent-arrow { color: #b7c0ce; font-size: 36rpx; }
+.recent-empty { padding: 42rpx 24rpx; color: #9aa4b5; font-size: 24rpx; text-align: center; }

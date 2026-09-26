@@ -1,0 +1,4 @@
+{
+  "desc": "桌游聚会助手小程序",
+  "rules": [{ "action": "allow", "page": "*" }]
+}

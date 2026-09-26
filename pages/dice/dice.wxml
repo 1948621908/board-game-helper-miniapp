@@ -1,0 +1,48 @@
+<view class="dice-page" bindtap="onRoll">
+  <view class="topbar">
+    <view>
+      <view class="eyebrow">DICE ROLLER</view>
+      <view class="title">掷骰子</view>
+      <view class="subtitle">点击屏幕任意空白处，开始投掷</view>
+    </view>
+    <view class="history-link" catchtap="onHistory">记录 <text>›</text></view>
+  </view>
+
+  <view class="count-card" catchtap="onStep" data-delta="0">
+    <view class="count-copy">
+      <view class="count-title">骰子数量</view>
+      <view class="count-tip">可选择 1～12 颗</view>
+    </view>
+    <view class="stepper">
+      <view class="step-button {{count <= 1 ? 'disabled' : ''}}" catchtap="onStep" data-delta="-1">−</view>
+      <view class="count-number">{{count}}</view>
+      <view class="step-button {{count >= 12 ? 'disabled' : ''}}" catchtap="onStep" data-delta="1">+</view>
+    </view>
+  </view>
+
+  <view class="stage">
+    <view class="stage-halo"></view>
+    <view class="dice-grid">
+      <block wx:for="{{dice}}" wx:for-item="die" wx:key="id">
+        <view class="die {{rolling ? 'rolling' : ''}}" style="animation-delay: {{die.id * 36}}ms">
+          <view class="pip-grid">
+            <block wx:for="{{die.cells}}" wx:for-item="pip" wx:key="position">
+              <view class="pip-cell"><view wx:if="{{pip.active}}" class="pip"></view></view>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="result-area">
+    <view wx:if="{{rolling}}" class="result-title">正在投掷...</view>
+    <block wx:elif="{{hasResult}}">
+      <view class="result-label">本次合计</view>
+      <view class="result-total">{{total}}<text> 点</text></view>
+      <view class="result-detail">{{valuesText}} = {{total}}</view>
+    </block>
+    <view wx:else class="result-title">准备好了吗？</view>
+    <view class="tap-hint">{{rolling ? '请稍候' : '轻点屏幕，再掷一次'}}</view>
+  </view>
+</view>

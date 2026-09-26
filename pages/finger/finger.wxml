@@ -1,0 +1,32 @@
+<view class="finger-page">
+  <view class="finger-header">
+    <view>
+      <view class="eyebrow">FINGER PICKER</view>
+      <view class="title">指尖选择</view>
+      <view class="subtitle">多人同时按住屏幕，等人数稳定后随机选一位</view>
+    </view>
+    <view class="count-badge">{{touches.length}} 人</view>
+  </view>
+
+  <view class="touch-stage {{locked ? 'is-locked' : ''}}" catchtouchstart="onTouchStart" catchtouchmove="onTouchMove" catchtouchend="onTouchEnd" catchtouchcancel="onTouchEnd">
+    <view class="stage-guide" wx:if="{{!touches.length}}">
+      <view class="guide-icon">☝</view>
+      <view class="guide-title">把手指放到这里</view>
+      <view class="guide-desc">每根手指都会显示一个位置圈</view>
+    </view>
+    <block wx:for="{{touches}}" wx:for-item="touch" wx:key="id">
+      <view class="finger {{touch.selected ? 'selected' : ''}} {{locked && !touch.selected ? 'dimmed' : ''}}" style="{{touch.style}}">
+        <view class="finger-ring"></view>
+        <view class="finger-label">{{touch.label}}</view>
+      </view>
+    </block>
+    <view wx:if="{{!locked && touches.length}}" class="stage-status">人数稳定 {{stableSeconds}} 秒后自动选择</view>
+    <view wx:if="{{locked}}" class="stage-status locked-status">已锁定，松开后点击下方重新开始</view>
+  </view>
+
+  <view class="result-area">
+    <view wx:if="{{result}}" class="result">{{result}}</view>
+    <view wx:else class="result-placeholder">还在等待更多手指...</view>
+    <button wx:if="{{locked}}" class="reset-button" bindtap="onReset">再来一次</button>
+  </view>
+</view>

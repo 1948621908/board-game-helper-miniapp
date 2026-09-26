@@ -1,0 +1,45 @@
+<view class="container home-page">
+  <view class="hero">
+    <view>
+      <view class="eyebrow">BOARD GAME NIGHT</view>
+      <view class="title">桌游聚会助手</view>
+      <view class="subtitle">把投骰、选人和记录，放到一张桌上。</view>
+    </view>
+    <view class="hero-mark">✦</view>
+  </view>
+
+  <view class="section-head">
+    <view class="section-title">聚会工具</view>
+    <view class="section-caption">现在就开一局</view>
+  </view>
+
+  <view class="tool-grid">
+    <block wx:for="{{tools}}" wx:key="id">
+      <view class="tool-card card" data-id="{{item.id}}" bindtap="onToolTap">
+        <view class="tool-icon {{item.tone}}">{{item.icon}}</view>
+        <view class="tool-name">{{item.name}}</view>
+        <view class="tool-desc">{{item.desc}}</view>
+        <view class="tool-tag">{{item.tag}}</view>
+        <view class="tool-arrow">→</view>
+      </view>
+    </block>
+  </view>
+
+  <view class="section-head recent-head">
+    <view class="section-title">最近掷骰</view>
+    <navigator url="/pages/history/history" class="more">查看全部 <text>›</text></navigator>
+  </view>
+  <view wx:if="{{recent.length}}" class="recent card">
+    <block wx:for="{{recent}}" wx:key="name">
+      <view class="recent-row">
+        <view class="recent-dot"></view>
+        <view class="recent-main">
+          <view class="recent-name">{{item.name}}</view>
+          <view class="recent-time">{{item.time}}</view>
+        </view>
+        <view class="recent-arrow">›</view>
+      </view>
+    </block>
+  </view>
+  <view wx:else class="recent-empty card">还没有投掷记录，先来开一局吧。</view>
+</view>
